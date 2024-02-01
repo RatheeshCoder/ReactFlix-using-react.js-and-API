@@ -1,9 +1,9 @@
 // src/components/Home.js
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import ShowList from '../components/ShowList';
-import ShowDetails from '../components/ShowDetails';
-import BookingForm from '../components/BookingForm';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import ShowList from "../components/ShowList";
+import ShowDetails from "../components/ShowDetails";
+import BookingForm from "../components/BookingForm";
 
 function Home() {
   return (

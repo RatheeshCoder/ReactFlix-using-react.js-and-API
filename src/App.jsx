@@ -5,7 +5,6 @@ import ShowDetails from "./components/ShowDetails";
 import BookingForm from "./components/BookingForm";
 import Layout from "./components/Layout";
 
-
 function App() {
   return (
     <main>

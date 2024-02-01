@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const BookingForm = (props) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phoneNumber: '',
+    name: "",
+    email: "",
+    phoneNumber: "",
   });
 
   const handleInputChange = (e) => {
@@ -20,26 +20,21 @@ const BookingForm = (props) => {
   const handleBookingSubmit = (e) => {
     e.preventDefault();
 
-    // Use session storage to store user details
-    sessionStorage.setItem('bookingDetails', JSON.stringify(formData));
+    sessionStorage.setItem("bookingDetails", JSON.stringify(formData));
 
-    // You can perform additional actions like sending the booking details to a server
-
-    // Show notification using react-toastify
-    toast.success('Booking Successful!', {
-      position: 'top-right',
-      autoClose: 3000, // Close the notification after 3 seconds
+    toast.success("Booking Successful!", {
+      position: "top-right",
+      autoClose: 3000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
       draggable: true,
     });
 
-    // Close the booking form
     if (props.onCloseModal) {
-     setTimeout(()=>{
+      setTimeout(() => {
         props.onCloseModal();
-     },3000)
+      }, 3000);
     }
   };
 
@@ -51,9 +46,17 @@ const BookingForm = (props) => {
           <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
             Booking Form - {props.showName}
           </h1>
-          <form className="space-y-4 md:space-y-6" onSubmit={handleBookingSubmit}>
+          <form
+            className="space-y-4 md:space-y-6"
+            onSubmit={handleBookingSubmit}
+          >
             <div>
-              <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your full name</label>
+              <label
+                htmlFor="name"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Your full name
+              </label>
               <input
                 type="text"
                 name="name"
@@ -66,7 +69,12 @@ const BookingForm = (props) => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email ID</label>
+              <label
+                htmlFor="email"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Email ID
+              </label>
               <input
                 type="email"
                 name="email"
@@ -79,7 +87,12 @@ const BookingForm = (props) => {
               />
             </div>
             <div>
-              <label htmlFor="phoneNumber" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
+              <label
+                htmlFor="phoneNumber"
+                className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+              >
+                Phone Number
+              </label>
               <input
                 type="tel"
                 name="phoneNumber"
@@ -97,7 +110,6 @@ const BookingForm = (props) => {
             >
               Book Now
             </button>
-           
           </form>
         </div>
       </div>
